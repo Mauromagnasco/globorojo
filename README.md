@@ -1,8 +1,11 @@
-The internet is no longer credible, we need to elevate our social scoring to meet today¡¯s world demands. 
-Globo Rojo is the first APP to use MERI.TO, an algorithm that makes your scores weigh as much as your own social validation. 
-It lets you browse and share the web¡¯s best video-content, with a unique tagging system that allows you to validate yourself as a real content curator and niche influencer.
+Description
+-----------
 
-LICENCE
+The internet is no longer credible, we need to elevate our social scoring to meet today's world demands. 
+Globo Rojo is the first APP to use MERI.TO, an algorithm that makes your scores weigh as much as your own social validation. 
+It lets you browse and share the web's best video-content, with a unique tagging system that allows you to validate yourself as a real content curator and niche influencer.
+
+Licence
 -------
 
 Globo Rojo is Social Video Sharing Platform
