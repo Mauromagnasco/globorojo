@@ -1,0 +1,28 @@
+.clearboth{ clear:both; }
+.floatleft{ float:left; }
+.floatright{ float:right; }
+.pointer{ cursor: pointer; }
+.bgRed{ background: #EC1C24 !important;}
+a{ cursor: pointer; text-decoration: none; }
+a:hover { text-decoration: none; color:inherit;}
+.clone{display:none;}
+.alignCenter{text-align:center;}
+#mainHeader1{ background: url(../img/headerBar.png); height: 90px;
+-webkit-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, .5);
+-moz-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, .5);
+box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, .5);
+z-index:40;
+}
+#mainHeaderTitle{ line-height: 90px; height: 90px; font-size: 30px; margin-left: 120px; color: #FFF; }
+#verticalBar{ border-right:1px solid #CCC;width:1px;height:350px;float:left;margin-left:7%;margin-top:90px; }
+#popupSignIn{ margin-top: 100px;}
+.previewImage{width:50px; height: 50px; margin-left: 10px; }
+
+#example_wrapper .row{ margin-left: 5px; margin-right: 5px; margin-top: 5px; }
+#example_filter input{ height: 32px; padding: 3px; }
+#example_length select{ height: 32px; padding: 3px; }
+.pagination li{ float:left; }
+.pagination li a{text-decoration:none;}
+.pagination li a:hover{text-decoration:none;}
+.pagination{ margin-bottom: 5px !important; }
+.pagination ul{ list-style-type : none !important;}

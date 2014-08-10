@@ -1,0 +1,692 @@
+/**
+ * Globo Rojo open source application
+ *
+ *  Copyright © 2013, 2014 by Mauro Magnasco <mauro.magnasco@gmail.com>
+ *
+ *  Licensed under GNU General Public License 2.0 or later.
+ *  Some rights reserved. See COPYING, AUTHORS.
+ *
+ * @license GPL-2.0+ <http://spdx.org/licenses/GPL-2.0+>
+ */
+@-webkit-viewport{width:device-width}
+@-moz-viewport{width:device-width}
+@-ms-viewport{width:device-width}
+@-o-viewport{width:device-width}
+@viewport{width:device-width}
+@font-face{
+	font-family: SegoeWP;
+	src: url('/fonts/SegoeWP.eot');
+	src: url('/fonts/SegoeWP.eot?#iefix') format('embedded-opentype'),
+		 url('/fonts/SegoeWP.ttf') format('truetype');
+}
+
+body{ background : #D7D7D7; font-family: SegoeWp !important; }
+.clearboth{ clear:both; }
+.floatleft{ float:left; }
+.floatright{ float:right; }
+.pointer{ cursor: pointer; }
+.bgRed{ background: #EC1C24 !important;}
+a{ cursor: pointer; text-decoration: none; }
+a:hover { text-decoration: none; color:inherit;}
+.clone{display:none;}
+*:focus
+{
+outline: none;
+outline-width: 0;
+}
+
+
+.greySelected{ background: #D7D7D7; color: #676767;}
+.redSelected{ background: #EC1C24 !important; color: #FFF !important;}
+.bordernone{ border: none;}
+.greyHighlightSelected{ background: #989897; color: #FFF;}
+.zIndex100{ z-index: 30; }
+.zIndex200{ z-index: 200; }
+area{ cursor:pointer; }
+
+
+@-webkit-keyframes rotation {
+    from {-webkit-transform: rotate(0deg);}
+    to   {-webkit-transform: rotate(359deg);}
+}
+@-moz-keyframes rotation {
+    from {-moz-transform: rotate(0deg);}
+    to   {-moz-transform: rotate(359deg);}
+}
+
+@media (min-width: 240px) {
+	#searchBackground{ display:none; position:absolute; top: 40px; left: 0px; right: 0px; bottom: 0px; z-index:90;}
+	#followingStatus{ padding-top:6px; }
+	#followingStatus img{ width: 60px; }
+	#followingStatus p{ padding:0px; margin: 0px; }
+	#videoInfoArea a, #videoInfoArea1 a{ color: #FFF; }
+	#videoScoreInfoByMeArea a{ color: rgb(236, 28, 36); }
+	#btnSmallFollow{ width:100%;margin-top:7px; }
+	#btnSmallFollowing{ width:100%;cursor:pointer; }
+	.videoItemBtnPlay{ position:absolute;right: 0px; top: 0px; width: 40px; height: 40px; opacity: 0.7;}
+	#imageUpload{ width: 80%; margin-left: 10%;background:#333;color:#FFF;border:#222;padding: 5px; font-size:16px;}
+	#mainContainer{ width: 100%; margin: 0px auto; background:#F2F2F2; position: absolute; left: 50%; top: 0px; bottom: 0px; overflow-y: auto; margin-left:-50%; }
+	#videoShareBody, #videoReportBody, #photoUploadBody{ width: 100%; margin: 0px auto; position: absolute; left: 50%; top: 0px; bottom: 0px; overflow-y: auto; margin-left:-50%; text-align:center;}
+	.videoReportBody{ margin-top: 70px !important; }
+	#homeNavigation, #searchNavigation{ height: 40px; width: 100%; background: #F2F2F2; position: relative; }
+	
+	#profileNavigation{ height: 40px; width: 100%; background: #676767; position: relative; }
+	#profileInfo{ position:absolute;top:40px; left: 0px; right: 0px; height: 95px; }
+	#profilePhoto{ position:absolute; left: 0px; top: 0px; width:95px;height:95px; cursor:pointer;}
+	#profileEnlargePhoto{ position:absolute; left: 50%; margin-left: -100px; top: 100px; width:200px;height:200px; z-index:3000;}
+	#profileBtnFollow, #profileBtnSetting{ position:absolute; top: 60px; left: 0px; right: 0px; height: 35px; background:#676767; color:#F2F2F2; text-align:center;line-height: 35px; }
+	#profileInfoArea{ position:absolute; left: 95px; top: 0px; right: 0px; }
+	#profileInfoNumber{ position:absolute; top: 0px; left:0px; right: 0px; height: 60px; background:#B4B4B4; color: #F2F2F2; }
+	.profileInfoNumberItem{ width:33%;float:left;text-align:center; }
+	#profileInfoVideosNumber, #profileInfoFollowersNumber, #profileInfoFollowingNumber{ font-size: 38px;margin-top:-8px; }
+	#profileInfoVideosLabel, #profileInfoFollowersLabel, #profileInfoFollowingLabel{ margin-top: -15px; height: 23px; }
+
+	#profileMenu{ position:absolute; top:95px; left:0px; right:0px; height: 35px; background:#B4B4B4; color: #F2F2F2; text-align:center;line-height:35px;font-size:14px; }
+	#profileMenuPart1{ position:absolute;left:0px; right: 50%; }
+	#profileMenuPart2{ position:absolute;left:50%; right: 0px;}
+	#profileMenuVideo{ position:absolute;left:0px;right:18px;height: 35px; }
+	#profileMenuListView1{ position:absolute;right:0px; width:35px; height: 35px; background:url("/img/btnListGrey.png"); background-size: 100%; }
+	#profileMenuListView2{ position:absolute;left:0px;width:35px;height: 35px; background:url("/img/btnDetailGrey.png"); background-size: 100%;}
+	#profileMenuListMode{ position: absolute; background-image:url("/img/iconVideoList.png"); background-size: 100%; left: 50%; margin-left: -17px; z-index: 100; height: 35px; width: 35px;}
+	#profileMenuCredibility{ position:absolute;left:18px; right:0px; height: 35px; }
+	
+	#profileVideoList, #profileCredibility, #profileSetting{ position:absolute;top:170px;left:0px;right:0px;bottom:0px; font-size: 16px; }
+	#profileCredibility{ text-align:center; background:#2B2B2B; color: #FFF; }
+	#profileCredibilityGraph{ text-align:center; margin: 30px auto; line-height:181px;font-size: 20px; }
+	#profileHashtagArea{ text-align:center; font-size: 16px;}
+	
+	.pieRed0{ background:url("/img/pieRed0_180.png") no-repeat; width: 181px; height: 181px;}
+	.pieRed1{ background:url("/img/pieRed1_180.png") no-repeat; width: 181px; height: 181px;}
+	.pieRed2{ background:url("/img/pieRed2_180.png") no-repeat; width: 181px; height: 181px;}
+	.pieRed3{ background:url("/img/pieRed3_180.png") no-repeat; width: 181px; height: 181px;}
+	.pieRed4{ background:url("/img/pieRed4_180.png") no-repeat; width: 181px; height: 181px;}
+	.pieRed5{ background:url("/img/pieRed5_180.png") no-repeat; width: 181px; height: 181px;}
+	
+	
+	#homeLeftNavIcon{ position : absolute; left: 0px; top: 0px; width: 40px; height: 40px; }
+	#homeRightNavIcon{ position : absolute; right: 0px; top: 0px; width: 40px; height: 40px; }
+	#homeBodyNavIcon{ position : absolute; left: 40px; top: 0px; right: 40px; height: 40px; text-align: center; font-size: 12px; color: #979797; line-height: 40px;}
+	#homeBodyBtnSearch{ position: absolute; top: 0px; right: 40px; height: 40px; line-height: 40px; font-size: 18px; color: #989898; margin-right: 7px; }
+	#homeOrderMode, #searchOrderMode, #searchUserOrderMode{ background:#B3B3B3; color: #FFF; text-align: center; height: 35px; line-height: 35px; width: 100%; position: relative; }
+	#homeOrderModeItem, #searchOrderModeItem{ width: 33.3333%; float:left; }
+	
+	#searchPeriodModeList{ position:absolute; left:33.3333%; z-index:400; width: 33.3333%; top: 115px; }
+	#searchPeriodModeItem{ height:35px; line-height: 35px; font-size: 14px; background:#B3B3B3; color: #FFF; text-align: center; width: 100%; cursor: pointer; }
+	.searchPeriodModeItemSelected{ background:#EC1C24 !important; color: #FFF !important; }
+	
+	#searchUserOrderModeItem{ width: 33.3333%; float:left; }
+	#btnAddVideo{ width:60px; height: 75px; left: 50%; margin-left: -30px; position: absolute; bottom: 0px; z-index: 20; background: url("/img/btnAddVideo320.png");}
+	
+	#homeVideoList{ position: absolute; top: 75px; left: 0px; right: 0px; bottom: 0px; overflow-y: auto; padding-bottom:70px; }
+	#videoVideoList{ position: absolute; top: 40px; left: 0px; right: 0px; bottom: 0px; overflow-y: auto; }
+	#videoItem{ width: 96%; margin: 8px auto; position:relative; background:#F9F9F9; -webkit-box-shadow: 0 2px 5px 2px rgba(0,0,0,0.05); -moz-box-shadow: 0 2px 5px 2px rgba(0,0,0,0.05); box-shadow: 0 2px 5px 2px rgba(0,0,0,0.05); }			
+	#videoItemImage{ width: 70px; height: 70px; float:left; background: #FDFDFD; cursor: pointer; }
+	#videoItemInfo{ right: 0px; left: 70px; height: 70px; padding-left: 14px; padding-top: 1px; position:absolute; background: #D7D7D7; }
+	#videoItemTitle{ font-size: 16px; margin-top: 2px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; margin-right: 10px; color: #676767; }
+	#videoItemHashtag{ font-size: 12px; color: #767676; }
+	#videoItemUsername{ font-size: 12px; }
+	#videoItemUsername a{ color: #979797; }
+	#videoItemTimeAgo{ position: absolute; right: 10px; top: 47px; font-size: 12px; color: #979797;}
+	
+	#videoItemPlayer{ height: 210px; background: #000; width: 100%; position: relative; cursor: pointer;}
+	#videoItemPlayerIframe{ position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; z-index: 40; display:none;}
+	
+	#videoItemThumb{ width:100%; height: 100%; }
+	#videoItemReport{ position:absolute;left:0px;bottom:0px; width: 40px; height:40px; opacity: 0.8; filter: alpha(opacity=80);}
+	#videoItemShare{ position:absolute;right:0px;bottom:0px; width: 40px; height:40px; opacity: 0.8; filter: alpha(opacity=80);}
+	
+	#videoItemPlay{ position:absolute; left: 50%; top: 50%; line-height: 70px; font-size:70px; width:70px; margin-top: -35px; margin-left:-28px; opacity: 0.9; filter: alpha(opacity=90); text-align:center; }
+	#videoItemScore{ position: absolute; left: 50%; top: 50%; height: 181px; width:181px; margin-top:-90px; margin-left:-90px; opacity: 0.9; filter: alpha(opacity=90);}
+	
+	#videoItemComment{ font-size: 12px; padding: 2px 8px 1px 8px; position:relative; }
+	#videoItemComment a{font-size: 13px; }
+	
+	#videoItemCommentArea{ color: #979797; overflow:hidden; word-break: break-word; }
+	#videoItemCommentArea a{ font-weight:bold; color: #676767}
+	
+	#videoItemCommentText{ margin-left:3%; margin-bottom:1px; font-size: 12px; background: #D7D7D7; border: 1px solid #D7D7D7; padding: 3px; margin-top: 10px; position:absolute;left:0px; right: 60px; top: 0px; height: 40px; width: 80%; }
+	#videoCommentArea{ position:relative;height: 60px; }
+	#btnCommentSubmit{ margin-right: 3%; margin-top: 10px; margin-bottom: 5px; }
+	
+	#navBtnPrev{ position: absolute; left: 0px; top: 0px; width: 40px; height: 40px; }
+	#navBtnSignOut{ position: absolute; right: 0px; top: 0px; width: 40px; height: 40px; }
+	#navPageTitle{ position: absolute; left: 40px; top: 0px; right: 40px; height: 40px; text-align: center; line-height: 40px; font-size: 20px; background:#676767; color: #FFFFFF; }
+	#navPageTitle1{ position: absolute; left: 0px; top: 0px; right: 0px; height: 40px; text-align: center; line-height: 40px; font-size: 20px; background:#676767; color: #FFFFFF; }
+	#navPageTitle2{ position: absolute; left: 40px; top: 0px; right: 0px; height: 40px; text-align: center; line-height: 40px; font-size: 20px; background:#676767; color: #FFFFFF; }
+	
+	.textCommon{ width: 86%; margin-left:7%; margin-top:30px; }
+	.textCommon1{ width: 86%; margin-left:7%; padding: 5px; }
+	.textCommon2{ width: 86%; margin-left:7%; margin-top:30px; text-align:left; padding: 0px; height: 40px;line-height: 40px; }
+	
+	.btnOk{ width:40px; height:40px; margin-right: 7%; margin-top: 30px; margin-bottom: 20px;float:right; }
+	
+	#emailNotifications{ margin-top: 80px;}
+	#imgEmailNotifications{ margin-top: -4px; height: 100%; cursor: pointer; }	
+
+	
+	.start #mainBody{ text-align:center; }
+	.start #imgLogo{ width: 150px; margin-top: 60px; margin-bottom: 30px; }
+	.start .btnStart{ width: 86%; margin-left: 7%;text-align:center; background: #D7D7D7; color: #676767;font-size:20px; line-height: 40px; height: 40px; margin-top: 20px; }
+	.start #btnSearch{ margin-top: 80px; }
+	
+	.login #mainBody{ text-align:center; }
+	.login #btnFBLogin{ width:86%; margin-top:70px; }
+	.login #btnTWLogin{ width:86%; margin-top:30px; }
+	
+	.signup #mainBody{ text-align:center; }
+	.signup #btnFBSignup{ width:86%; margin-top:70px; }
+	.signup #btnTWSignup{ width:86%; margin-top:30px; }
+	.login #labelLogin, .signup #labelSignup{ color:#676767; font-size: 16px;margin-top: 40px; }
+	
+	#searchSearchLeftNavIcon{ position : absolute; left: 0px; top: 0px; width: 40px; height: 40px; }
+	#searchSearchBodyNavIcon{ position : absolute; left: 40px; top: 0px; right: 120px; height: 40px; text-align: center; font-size: 14px; color: #979797; line-height: 40px;}
+	#searchSearchBodyBtnSearch{ position: absolute; top: 0px; right: 40px; height: 40px; line-height: 40px; font-size: 18px; color: #989898; text-align:center; width: 40px; }
+	#searchSearchBodyBtnDelete{ position: absolute; top: 0px; right: 80px; height: 40px; line-height: 40px; font-size: 18px; color: #989898; text-align:center; width: 40px; }
+	#searchTxtKeyword{ width:100%; height: 100%;background:#F2F2F2;color:#989898;border:none; padding-left: 5px; }
+	
+	#redTooltip{ position:absolute; height: 40px; font-size: 12px; text-align:center; line-height: 40px; left: 40px; top: 0px; right: 0px;}
+
+	#searchSearchMode{ position:relative; height: 40px; background: #989898; color: #FFF; font-size: 14px; text-align:center; line-height: 40px;}
+	#searchModeHashtag{ position: absolute; left:0px; top: 0px; right: 20px; height: 40px; }
+	#searchModeHashtagList{ position: absolute; right:0px; width:40px; height: 40px; top: 0px; background:url("/img/btnListGrey.png"); background-size: 100%;}
+	#searchModeHashtagMosaic{ position: absolute; left: 0px; width: 40px; height: 40px; top: 0px; background:url("/img/btnDetailGrey.png"); background-size: 100%;}
+	#searchModeVideo{ position: absolute; left: 50%; top: 0px; margin-left:-20px; width:40px; height:40px; background-image:url("/img/iconVideoList.png"); background-size: 100%;}
+	
+	.hashtagListRed{ background:url("/img/btnListRed.png") !important;  background-size: 100% !important;}
+	.hashtagMosaicRed{ background:url("/img/btnDetailRed.png") !important;  background-size: 100% !important;}	
+	
+	#searchModeUsername{ position: absolute; right: 0px; left: 20px; top: 0px; height: 40px; }
+	
+	#searchVideoList{ position: absolute; left: 0px; top: 115px; right: 0px; bottom: 0px; overflow-y: auto; }
+	#searchVideoItemByList,#profileVideoItemByList{ position:relative; margin:5px;background:#D7D7D7;height:65px; overflow: hidden; }
+	#searchVideoItemByListThumb,#profileVideoItemByListThumb{ position:absolute; width:90px; height:65px;left:0px;top:0px; }
+	#searchVideoItemByListBody,#profileVideoItemByListBody{ position:absolute; right: 32px; top: 0px; left: 90px; font-size: 12px; line-height:17px; margin-left: 10px; margin-top: 7px; margin-right: 5px; }
+	#searchVideoItemByListUsername,#profileVideoItemByListUsername{ font-weight: bold; }
+	#searchVideoItemByListContent,#profileVideoItemByListContent{ height: 18px; word-break:break-word; overflow: hidden; text-overflow:ellipsis; white-space:nowrap;}
+	#searchVideoItemByListHashtag,#profileVideoItemByListHashtag{ height: 18px; }
+	#searchVideoItemByListScore,#profileVideoItemByListScore{ position:absolute; left: 0px; top: 0px; width: 65px; height: 65px; text-align:center; line-height: 65px; width: 90px; margin-left: 12px; opacity: 0.5;}
+	
+	#searchVideoItemSmall, #profileVideoItemSmall{ position:absolute;right:0px;width:33px;top:0px;bottom:0px; }
+
+	
+	.greyScore0{ background:url("/img/pieGrey0_65.png") no-repeat;}
+	.greyScore1{ background:url("/img/pieGrey1_65.png") no-repeat; }
+	.greyScore2{ background:url("/img/pieGrey2_65.png") no-repeat; }
+	.greyScore3{ background:url("/img/pieGrey3_65.png") no-repeat; }
+	.greyScore4{ background:url("/img/pieGrey4_65.png") no-repeat; }
+	.greyScore5{ background:url("/img/pieGrey5_65.png") no-repeat; }
+	
+	.whiteScore0{ background:url("/img/pieWhite0_65.png") no-repeat; }
+	.whiteScore1{ background:url("/img/pieWhite1_65.png") no-repeat; }
+	.whiteScore2{ background:url("/img/pieWhite2_65.png") no-repeat; }
+	.whiteScore3{ background:url("/img/pieWhite3_65.png") no-repeat; }
+	.whiteScore4{ background:url("/img/pieWhite4_65.png") no-repeat; }
+	.whiteScore5{ background:url("/img/pieWhite5_65.png") no-repeat; }	
+	
+	#searchVideoItemByMosaic{ float:left;width: 46%; margin: 5px 2% 5px 2%; height:90px; }
+	#searchVideoItemByMosaicThumb{ width: 100%; height: 100%; }
+
+	#searchUserList{ position: absolute; left: 0px; top: 115px; right: 0px; bottom: 0px; overflow-y: auto; }
+	#searchUserItem,#userItem{ position:relative; margin:5px;background:#D7D7D7;height:65px; }
+	#searchUserItemPhoto,#userItemPhoto{ position:absolute; width:65px; height:65px;left:0px;top:0px; cursor: pointer; }
+	#searchUserItemBody,#userItemBody{ position:absolute; right: 0px; top: 0px; left: 65px; font-size: 12px; line-height:15px; margin-left: 20px; margin-top: 7px;}
+	#searchUserItemUsername,#userItemUsername{ font-weight: bold; }
+	#searchUserItemCredGraph,#userItemCredGraph{ position:absolute; left: 0px; top: 0px; width: 65px; height: 65px; text-align:center; line-height: 65px; opacity: 0.5; filter: alpha(opacity=50); cursor: pointer;}
+	#searchUserItemFriendship{ position:absolute;right: 0px; width: 65px; top: 0px; height: 65px; }
+	
+	#videoPlayerIframe{ position:absolute; width: 300px; height: 200px; left: 50%; top: 50%; margin-left:-150px; margin-top: -100px;z-index: 60; }
+	#videoScoreMain, #videoInfoArea1{ position:absolute; left: 0px; top: 0px; bottom:0px; right: 0px; z-index: 50; text-align:center; color: #FFF; margin-top: 50px; font-size: 14px;}
+	#videoScorePanel{ height: 181px; width:181px; margin:10px auto; position: relative; }
+	
+	#videoScorePanelScore{ position:absolute;top:50%; left:50%; width: 50px; height: 50px; margin-left: -25px; margin-top: -25px; text-align:center;line-height: 50px; font-size: 18px; background:url(/img/btnCheck.png); background-size:cover; cursor: pointer; }
+	
+	#videoScoreUserGaveScoreList a{ color: #FFF; }
+	#videoScoreUserGaveScoreList{ margin-top: 20px; padding-bottom: 20px; }
+	.scorePanelHide{ opacity: 0; z-index: -1 !important; filter: alpha(opacity=0);}
+	
+	#notificationList{ position:absolute; top: 40px; left: 0px; right: 0px; bottom: 0px; overflow-y:auto; color: #979797; font-size: 12px; line-height: 14px;}
+	#notificationList a{ font-size: 13px; line-height: 16px;}
+	#notificationItem{ width: 100%; height: 90px; margin-top: 10px; margin-bottom: 10px;background:#F2F2F2;position:relative; }
+	#notificationItemTitle{ overflow:hidden; text-overflow: ellipsis; white-space: nowrap; height: 16px; }
+	#notificationItemTitle a{ color: #676767; }
+	#notificationGap{ position:absolute; left: 10px; top: 10px; right: 10px; bottom: 10px;background:#D7D7D7; }
+	#notificationItemPhoto{ width: 70px; height: 70px; cursor: pointer; }
+	#notificationItemContent{ position:absolute; left: 70px; top: 0px; right: 0px; bottom: 0px; margin: 12px 10px 0px 15px; }
+	#notificationItemDescription{ overflow:hidden; height:42px; margin-top:1px; word-break: break-word;}
+	#notificationItemTimeAgo{ position:absolute; right: 10px; top:-8px; }
+	#profileSaveSettings{ position:relative;}
+	#profileSaveSettings i{ position:absolute;right:10px; margin-top:0px; }
+	
+	#videoPlayerContainer{ position:fixed; top: 0px; left: 0px; bottom: 0px; right: 0px;background: #000; z-index: 50; }
+	#applicationContainer, #videoScoreContainer, #videoReportContainer, #photoUploadContainer{ position:fixed; top: 0px; left: 0px; bottom: 0px; right: 0px;background: #222; z-index: 200; overflow-y: auto;}
+	#videoShareContainer{ position:fixed; top: 0px; left: 0px; bottom: 0px; right: 0px;background: #222; z-index: 30; overflow-y: auto;}	
+	#btnFBShare{ width:86%; margin-top:100px; }
+	#btnTWShare{ width:86%; margin-top:50px; }
+	#reportCopyPostUrl, #emailShare{ margin-top: 50px; text-align:center;}
+	
+	#signUpPhoto{ width: 200px; height: 200px; border-radius: 5px !important;}
+	.btnForgotPassword{ margin-left:3%; margin-bottom:1px; font-size: 12px; background: #F2F2F2; border: 1px solid #F2F2F2; margin-top: 10px; position:absolute;left:10px; top: 20px; height: 40px; color: #676767; line-height: 40px;}
+
+	.followingList #mainBody, .followerList #mainBody { position:absolute; top: 40px; left: 0px; right: 0px; bottom: 0px; }
+	.findFriends #mainBody{ position:absolute; top: 70px; left: 0px; right: 0px; bottom: 0px; }
+	.uploadPicture #mainBody{ position:absolute; top: 55px; left: 0px; right: 0px; bottom: 0px; }
+	.findFriends #socialTab{ position:absolute; top: 40px; left: 0px; right: 0px; height: 30px; }
+	.findFriends #socialItem{ float:left; width: 50%; text-align:center; font-size: 14px; line-height: 30px; }
+	.socialUnconnected{ text-align:center; margin-top:30px; font-size:14px; }
+	
+	#loadingContainer{position:absolute; top: 50%; left: 50%; z-index: 100; overflow: hidden; text-align:center; margin-left: -35px;}
+	#imgLoading{
+		width: 70px;
+		-webkit-animation: rotation 2s infinite linear;
+		-moz-animation: rotation 2s infinite linear;
+	}
+	.popupBtnPrev{ position:fixed; width:40px; height:40px; cursor:pointer; z-index: 2000;}
+	.popupBtnPlay{ position:fixed; width:40px; height:40px; cursor:pointer; right: 0px; top: 0px; z-index: 2000;}
+	.popupBtnReport{ position:fixed; width:40px; height:40px; cursor:pointer; left: 0px; bottom: 0px; z-index: 2000;}
+	.popupBtnShare{ position:fixed; width:40px; height:40px; cursor:pointer; right: 0px; bottom: 0px; z-index: 2000;}
+		
+	.noData{ font-size: 18px; text-align:center; margin-top: 100px;}
+	#btnCommentShare{ height: 12px; }
+	.labelInfo{ width:86%;margin-left:8%; color:#AAA; margin-top: 3px;position:absolute;text-align: left; font-size:12px; }
+	.videoProfile{ position: absolute; left: 0px; top: 0px; width: 70px; height: 70px; }
+	
+	.hashtag{width: 75%;margin-right: 7%; margin-left: 18%;}
+	.hashtag1{width: 86%;margin-right: 7%; margin-left: 7%;}
+	.hashtag2{ top: 40px; left:40px; right:40px;height:40px; line-height:40px;width: initial; line-height:30px;}
+	#hashtagSymbol{position:absolute; top : 35px; left: 11%; font-size:15px; font-weight:bold;color:#AAA;}
+	.inputItem{ position: relative; }
+	.btnClearText{ position:absolute;top: 5px;right: 10%;width: 18px;height: 18px; }
+	.btnClearTextarea{ position:absolute;top: 10px;right: 18%;width: 18px;height: 18px; z-index: 10;}
+	
+	#shareSocial{ margin-left: 7%;margin-top: 20px; width: 40px; height: 40px;padding-left:40px; background-repeat: no-repeat; background-size: 40px !important;}
+	#labelShareAlso{ margin-top:50px; margin-left: 7%;font-size:14px; color: #AAA; }
+	.buttonUp{ margin-top: -40px !important; }
+	.socialImage{ width: 40px; height: 40px; }
+	
+    .menuList{ position:absolute;left:0px; top:40px; right:0px;z-index:310; background: #FFF;
+	-webkit-transform: scaleY(0); -o-transform: scaleY(0); -ms-transform: scaleY(0); transform: scaleY(0); 
+	-webkit-transition: -webkit-transform 0.35s ease-out; -o-transition: -o-transform 0.35s ease; -ms-transition: -ms-transform 0.35s ease; transition: transform 0.35s ease; 
+	-webkit-transform-origin: top; -o-transform-origin: top; -ms-transform-origin: top; transform-origin: top; }
+    .menuHeight{ -webkit-transform: scaleY(1); -o-transform: scaleY(1);	-ms-transform: scaleY(1); transform: scaleY(1); }
+    
+    .menuItem{ width:100%; height:40px; line-height:40px; font-size: 16px; text-align:center; cursor:pointer; position:relative; }
+    .menuItemLight{ background:#D7D7D7; color: #676767; }
+    .menuItemDark{ background:#B3B3B3; color: #FFFFFF; }
+    .menuItemRed{ background:#EC1C24 !important; color: #FFFFFF !important; }
+    .menuListBackground, .periodListBackground{ position: absolute; left: 0px; top: 40px; right: 0px; bottom: 0px;z-index:300; }
+    .menuItemImg{ position:absolute; right: 0px; top: 0px; width: 40px; height: 40px; }    	
+}
+@media( min-width: 320px ){
+	#homeBodyNavIcon{ font-size:16px;}
+	#videoItemReport{ width: 70px; height:70px; }
+	#videoItemShare{ width: 70px; height:70px; }	
+}
+@media (min-width: 400px) {
+	#videoItemPlayer{ height: 280px; }
+	#videoPlayerIframe{ width: 360px; height: 240px; margin-left: -180px; margin-top: -120px; }
+}
+@media (min-width: 480px) {
+	#searchBackground{ display:none; position:absolute; top: 60px; left: 0px; right: 0px; bottom: 0px; z-index:90;}
+	.hashtag2{ top: 60px; left:60px; right:60px;height:60px; line-height: 45px; }
+	#followingStatus{ padding-top: 8px; }
+	#followingStatus img{ width: 90px; }
+	#followingStatus p{ margin-bottom: 5px;}
+	
+	#btnSmallFollow{ margin-top:11px; }
+	.videoItemBtnPlay{ width: 60px; height: 60px; }
+	#imageUpload{ font-size:24px;}
+	#homeNavigation, #searchNavigation{ height: 60px; }
+	#homeLeftNavIcon{ width: 60px; height: 60px; }
+	#homeRightNavIcon{ width: 60px; height: 60px; }
+	#homeBodyNavIcon{ left: 60px; right: 60px; height: 60px; font-size: 26px; line-height: 60px;}
+	#homeBodyBtnSearch{ right: 60px; height: 60px; line-height: 60px; font-size: 24px; margin-right: 10px; }
+	#homeOrderMode, #searchOrderMode, #searchUserOrderMode{ height: 52px; }
+	#homeOrderModeItem, #searchOrderModeItem, #searchUserOrderModeItem{ height: 52px; line-height: 52px; font-size: 20px; }
+	
+	#searchPeriodModeList{ top:172px; }
+	#searchPeriodModeItem{ height:52px; line-height: 52px; font-size: 20px;}	
+	
+	#homeVideoList{ top: 112px; padding-bottom:108px;}
+	#videoVideoList{ top: 60px; }
+	#videoItem{ margin: 10px auto; }
+	#videoItemImage{ width: 100px; height: 100px; }
+	#videoItemInfo{ left: 100px; height: 100px; padding-left: 15px; padding-top: 3px; }
+	#videoItemTitle{ font-size: 20px; }
+	#videoItemHashtag, #videoItemUsername{ font-size: 18px; }
+	#videoItemTimeAgo{ right: 15px; top: 65px; font-size: 18px; }
+	#videoItemPlayer{ height: 320px; }
+	#videoItemReport,#videoItemShare{ width: 100px; height:100px;}
+	
+	#videoItemComment{ font-size: 18px; padding: 4px 12px 2px 12px; }
+	#videoItemComment a{ font-size: 20px; }
+	#videoCommentArea{ height: 80px; }	
+	#videoItemCommentText{ font-size: 18px; padding: 5px; margin-top: 10px; left:0px; right: 80px; height: 60px;}
+	#btnCommentSubmit{ margin-right: 3%; margin-top: 10px; margin-bottom: 5px; }	
+	.btnOk{ width:60px; height:60px; margin-right: 7%; margin-top: 30px; margin-bottom: 20px; }
+	
+	#navBtnPrev,#navBtnSignOut{ width: 60px; height: 60px; }
+	#navPageTitle{ left: 60px; height: 60px; line-height: 60px; font-size: 30px; right: 60px;}
+	#navPageTitle1{ left: 0px; height: 60px; line-height: 60px; font-size: 30px; }
+	#navPageTitle2{ left: 60px; height: 60px; line-height: 60px; font-size: 30px; }
+	.start .btnStart{ height: 60px; line-height: 60px; font-size: 30px; }
+	
+	.login #labelLogin, .signup #labelSignup{ color:#676767; font-size: 24px;margin-top: 60px; }	
+	
+	#videoItemPlay{ line-height: 110px; font-size:110px; width:110px; margin-top: -60px; margin-left:-42px; }
+	#videoItemScore{ height: 290px; width: 290px; margin-top:-145px; margin-left:-145px; }	
+	
+	
+	#profileInfo{ top:60px; height: 145px; }	
+	#profilePhoto{ width:145px; height:145px; }
+	#profileEnlargePhoto{ margin-left: -200px; top: 200px; width:400px;height:400px; }
+	#profileBtnFollow, #profileBtnSetting{ top: 90px; height: 55px; line-height: 55px; font-size: 24px; }
+	#profileInfoArea{ left: 145px; }
+	#profileInfoNumber{ height: 90px; }
+	#profileInfoVideosNumber, #profileInfoFollowersNumber, #profileInfoFollowingNumber{ font-size: 50px;margin-top:-8px; }
+	#profileInfoVideosLabel, #profileInfoFollowersLabel, #profileInfoFollowingLabel{ font-size: 20px; margin-top: -20px; height: 38px; }
+	
+	#profileMenu{ top:145px; height: 55px; line-height:55px;font-size:24px; }
+	#profileMenuVideo{ right:28px;height: 55px; }
+	#profileMenuListView1{ width:55px; height: 55px; }
+	#profileMenuListView2{ width:55px;height: 55px; }
+	#profileMenuListMode{ margin-left: -27px; height: 55px; width: 55px;}
+	#profileMenuCredibility{ left:28px; height: 55px; }
+	
+	#profileVideoList, #profileCredibility, #profileSetting{ top:260px; font-size: 24px; }
+	#profileCredibilityGraph{ line-height:290px; font-size: 30px; }	
+	#profileHashtagArea{ font-size: 24px;}
+	
+	#searchVideoItemByList,#profileVideoItemByList{ margin:7px; height:97px; }
+	#searchVideoItemByListThumb,#profileVideoItemByListThumb{ width:135px; height:97px; }
+	#searchVideoItemByListBody,#profileVideoItemByListBody{ right: 45px; left: 135px; font-size: 18px; line-height:24px; margin-left: 10px; margin-top: 7px; margin-right: 5px; }
+	#searchVideoItemByListContent,#profileVideoItemByListContent{ height: 25px; }
+	#searchVideoItemByListScore,#profileVideoItemByListScore{ width: 97px; height: 97px; line-height: 97px; margin-left: 19px;}
+	#searchVideoItemSmall, #profileVideoItemSmall{ width:49px; }	
+	
+	
+	#searchVideoList{ top: 172px; }
+	#searchSearchLeftNavIcon{ width: 60px; height: 60px; }
+	#searchSearchBodyNavIcon{ left: 60px; right: 180px; height: 60px; font-size: 18px; line-height: 60px;}
+	#searchSearchBodyBtnSearch{ height: 60px; line-height: 60px; font-size: 24px; width: 60px; right: 60px;}
+	#searchSearchBodyBtnDelete{ height: 60px; line-height: 60px; font-size: 24px; width: 60px; right: 120px;}
+	#searchTxtKeyword{ padding-left: 7px; }
+	
+	#redTooltip{ height: 60px; font-size: 18px; line-height: 60px; left: 60px; }	
+	#searchSearchMode{ height: 60px; font-size: 21px; line-height: 60px;}		
+	#searchModeHashtag{ right: 30px; height: 60px; }
+	#searchModeHashtagList{ width:60px; height: 60px; }
+	#searchModeHashtagMosaic{ width: 60px; height: 60px; }
+	#searchModeUsername{ left: 30px; height: 60px; }	
+	#searchModeVideo{ margin-left:-30px; width:60px; height:60px;}
+	
+	#searchUserList{ top: 172px;}
+	#searchUserItem, #userItem{ height:97px; }
+	#searchUserItemPhoto, #userItemPhoto{ width:97px; height:97px;}
+	#searchUserItemBody, #userItemBody{ right: 0px; left: 97px; font-size: 18px; line-height:25px; margin-left: 20px; margin-top: 7px;}
+	#searchUserItemCredGraph, #userItemCredGraph{ width: 97px; height: 97px; line-height: 97px; }
+	#searchUserItemFriendship{ width: 97px; height: 97px; }			
+	
+	.greyScore0{ background:url("/img/pieGrey0_97.png") no-repeat; }
+	.greyScore1{ background:url("/img/pieGrey1_97.png") no-repeat; }
+	.greyScore2{ background:url("/img/pieGrey2_97.png") no-repeat; }
+	.greyScore3{ background:url("/img/pieGrey3_97.png") no-repeat; }
+	.greyScore4{ background:url("/img/pieGrey4_97.png") no-repeat; }
+	.greyScore5{ background:url("/img/pieGrey5_97.png") no-repeat; }
+	
+	.whiteScore0{ background:url("/img/pieWhite0_97.png") no-repeat; }
+	.whiteScore1{ background:url("/img/pieWhite1_97.png") no-repeat; }
+	.whiteScore2{ background:url("/img/pieWhite2_97.png") no-repeat; }
+	.whiteScore3{ background:url("/img/pieWhite3_97.png") no-repeat; }
+	.whiteScore4{ background:url("/img/pieWhite4_97.png") no-repeat; }
+	.whiteScore5{ background:url("/img/pieWhite5_97.png") no-repeat; }		
+	
+	.pieRed0{ background:url("/img/pieRed0_290.png") no-repeat; width: 290px; height: 290px;}
+	.pieRed1{ background:url("/img/pieRed1_290.png") no-repeat; width: 290px; height: 290px;}
+	.pieRed2{ background:url("/img/pieRed2_290.png") no-repeat; width: 290px; height: 290px;}
+	.pieRed3{ background:url("/img/pieRed3_290.png") no-repeat; width: 290px; height: 290px;}
+	.pieRed4{ background:url("/img/pieRed4_290.png") no-repeat; width: 290px; height: 290px;}
+	.pieRed5{ background:url("/img/pieRed5_290.png") no-repeat; width: 290px; height: 290px;}
+	
+	.btnOk{ margin-top: 50px; }
+	.addVideo #mainBody, .login #mainBody, .start #mainBody, .signup #mainBody{ margin-top: 120px; }
+	.textCommon{ height: 45px; font-size: 25px; margin-top: 40px; }
+	.textCommon1{ padding: 10px; font-size: 18px; margin-top: 0px; }
+	.textCommon2{ margin-top:40px; height: 60px;line-height: 60px; font-size: 25px;}
+	
+	#emailNotifications{ margin-top: 120px;}
+	#imgEmailNotifications{ margin-top: -7px; }
+		
+	#btnAddVideo{ width:90px; height: 113px; margin-left: -45px; background: url("/img/btnAddVideo480.png");}
+	
+	#videoPlayerIframe{ width: 450px; height: 300px; margin-left:-225px; margin-top: -150px; }
+	#videoScoreMain, #videoInfoArea1{ margin-top: 75px; font-size: 21px;}
+	#videoScorePanel{ height: 290px; width:290px; margin:30px auto;}
+	#videoScorePanelScore{ width: 80px; height: 80px; margin-left: -40px; margin-top: -40px; line-height: 80px; font-size: 30px;}
+	
+	#notificationList{ top: 60px; font-size: 15px; line-height: 18px;}
+	#notificationList a{ font-size: 16px; line-height: 18px;}
+	#notificationItem{ height: 130px; margin-top: 15px; margin-bottom: 15px;}
+	#notificationItemTitle{ height: 20px; }
+	#notificationGap{ left: 15px; top: 15px; right: 15px; bottom: 15px;}
+	#notificationItemPhoto{ width: 100px; height: 100px; }
+	#notificationItemContent{ left: 100px; margin: 18px 10px 0px 15px; }
+	#notificationItemDescription{ height:54px; margin-top:2px;}
+	#notificationItemTimeAgo{ right: 10px; top:-12px; }
+	
+	#profileSaveSettings i{ right:15px; margin-top:2px; }
+	
+	#btnFBShare{ margin-top:120px; }
+	#btnTWShare{ margin-top:70px; }
+	#reportCopyPostUrl, #emailShare{ margin-top: 70px;}
+	.btnForgotPassword{ font-size: 18px; margin-top: 10px; left:18px; height: 60px; top: 40px; line-height: 60px;}
+	.followingList #mainBody, .followerList #mainBody{ top: 60px; }
+	.findFriends #mainBody{ top : 105px; }
+	.uploadPicture #mainBody{ top : 80px; }
+	.findFriends #socialTab{ top : 60px; height: 45px; }
+	.findFriends #socialItem{ font-size: 20px; line-height: 45px; }
+	.socialUnconnected{ font-size:20px; }
+	
+	#loadingContainer{ margin-left: -53px; }
+	#imgLoading{ width: 106px; }
+	
+	.popupBtnPrev, .popupBtnPlay, .popupBtnReport, .popupBtnShare{ width:60px; height:60px; }
+		
+	.noData{ font-size: 24px; }
+	#btnCommentShare{ height: 20px; }
+	.videoReportBody{ margin-top: 105px !important; }
+	.labelInfo{ font-size:18px; }
+	.videoProfile{ width: 100px; height: 100px; }
+	#hashtagSymbol{top : 35px; font-size:32px; }
+	.btnClearText{ top: 9px; right: 9%; width: 28px;height: 28px; }
+	.btnClearTextarea{ top: 15px;right: 18%; width: 32px;height: 32px;}
+	
+	#shareSocial{ margin-top: 25px; width: 60px; height: 60px;padding-left:60px; background-size: 60px !important;}
+	#labelShareAlso{ margin-top:60px; font-size:18px; }
+	.buttonUp{ margin-top: -60px !important; }
+	.socialImage{ width: 60px; height: 60px; }	
+    .menuList{ top: 60px;}
+    .menuItem{ height: 60px; line-height: 60px; font-size: 24px; }
+    .menuItemImg{ width: 60px; height: 60px; }
+    .menuListBackground, .periodListBackground{ top: 60px; }	
+}
+@media (min-width: 560px) {
+	#videoItemPlayer{ height: 350px; }
+	#videoPlayerIframe{ width: 510px; height: 340px; margin-left: -255px; margin-top: -170px; }
+}
+@media (min-width: 640px) {
+	#searchBackground{ display:none; position:absolute; top: 80px; left: 0px; right: 0px; bottom: 0px; z-index:90;}
+	.hashtag2{ top: 80px; left:80px; right:80px;height:80px; line-height: 60px;}
+	#followingStatus{ padding-top: 9px; }
+	#followingStatus img{ width: 120px; }
+	#followingStatus p{ margin-bottom: 8px;}
+		
+	#btnSmallFollow{ margin-top:15px; }
+	.videoItemBtnPlay{ width: 80px; height: 80px; }
+	#imageUpload{ font-size:28px; }
+	#mainContainer, #videoShareBody, #videoReportBody, #photoUploadBody{ width: 640px; margin-left:-320px; }
+	.videoReportBody{ margin-top: 150px !important; }
+	#homeNavigation, #searchNavigation{ height: 80px; }
+	#homeLeftNavIcon{ width: 80px; height: 80px; }
+	#homeRightNavIcon{ width: 80px; height: 80px; }
+	#homeBodyNavIcon{ left: 80px; right: 80px; height: 80px; font-size: 30px; line-height: 80px;}
+	#homeBodyBtnSearch{ right: 80px; height: 80px; line-height: 80px; font-size: 30px; margin-right: 15px; }
+	#homeOrderMode, #searchOrderMode, #searchUserOrderMode{ height: 70px; }
+	#homeOrderModeItem, #searchOrderModeItem, #searchUserOrderModeItem{ height: 70px; line-height: 70px; font-size: 25px; }
+	
+	#searchPeriodModeList{ top:230px; }
+	#searchPeriodModeItem{ height:70px; line-height: 70px; font-size: 28px;}	
+	
+	#homeVideoList{ top: 150px; padding-bottom:140px;}
+	#videoVideoList{ top: 80px; }
+	#videoItem{ margin: 15px auto; }
+	#videoItemImage{ width: 130px; height: 130px; }
+	#videoItemInfo{ left: 130px; height: 130px; padding-left: 20px; padding-top: 2px; }
+	#videoItemTitle{ font-size: 32px; }
+	#videoItemHashtag, #videoItemUsername{ font-size: 20px; }
+	#videoItemTimeAgo{ right: 20px; top: 85px; font-size: 20px; }
+	#videoItemPlayer{ height: 380px; }
+	#videoItemReport,#videoItemShare{ width: 130px; height:130px; }
+	
+	#videoItemComment{ font-size: 24px; padding: 6px 15px 3px 15px; }
+	#videoItemComment a{ font-size: 27px; }
+	#navBtnPrev,#navBtnSignOut{ width: 80px; height: 80px; }
+	#navPageTitle{ left: 80px; height: 80px; line-height: 80px; font-size: 40px; right: 80px;}
+	#navPageTitle1{ left: 0px; height: 80px; line-height: 80px; font-size: 40px; }
+	#navPageTitle2{ left: 80px; height: 80px; line-height: 80px; font-size: 40px; }
+	.start .btnStart{ height: 80px; line-height: 80px; font-size: 40px; }
+	
+	#notificationItem{ line-height: 18px;}
+	#notificationItemTitle{ height: 24px; }
+	
+	.login #labelLogin, .signup #labelSignup{ color:#676767; font-size: 32px;margin-top: 60px; }
+	#videoCommentArea{ height: 100px; }	
+	#videoItemCommentText{ font-size: 24px; padding: 7px; margin-top: 10px; left:0px; right: 110px; height: 80px;}	
+	.btnOk{ width:80px; height:80px; margin-right: 7%; margin-top: 30px; margin-bottom: 20px; }
+	
+	#profileInfo{ top:80px; height: 195px; }	
+	#profilePhoto{ width:195px; height:195px; }
+	#profileEnlargePhoto{ margin-left: -300px; top: 300px; width:600px;height:600px; }
+	#profileBtnFollow, #profileBtnSetting{ top: 120px; height: 75px; line-height: 75px; font-size: 32px; }
+	#profileInfoArea{ left: 195px; }
+	#profileInfoNumber{ height: 120px; }
+	#profileInfoVideosNumber, #profileInfoFollowersNumber, #profileInfoFollowingNumber{ font-size: 60px; margin-top:-8px; }
+	#profileInfoVideosLabel, #profileInfoFollowersLabel, #profileInfoFollowingLabel{ font-size: 24px; margin-top: -20px; height: 62px; }
+	
+	#profileMenu{ top:195px; height: 75px; line-height:75px;font-size:28px; }
+	#profileMenuVideo{ right:38px;height: 75px; }
+	#profileMenuListView1{ width:75px; height: 75px; }
+	#profileMenuListView2{ width:75px;height: 75px; }
+	#profileMenuListMode{ margin-left: -37px; height: 75px; width: 75px;}
+	#profileMenuCredibility{ left:38px; height: 75px; }
+	
+	#profileVideoList, #profileCredibility, #profileSetting{ top:350px; font-size: 24px; }
+	#profileCredibilityGraph{ line-height:290px; font-size: 30px; }	
+	#profileHashtagArea{ font-size: 24px;}
+	
+	#searchVideoList{ top: 230px; }
+	#searchSearchLeftNavIcon{ width: 80px; height: 80px; }
+	#searchSearchBodyNavIcon{ left: 80px; right: 240px; height: 80px; font-size: 24px; line-height: 80px;}
+	#searchSearchBodyBtnSearch{ height: 80px; line-height: 80px; font-size: 32px; width: 80px; right: 80px;}
+	#searchSearchBodyBtnDelete{ height: 80px; line-height: 80px; font-size: 32px; width: 80px; right: 160px;}
+	#searchTxtKeyword{ padding-left: 7px; }
+
+	#redTooltip{ height: 80px; font-size: 24px; line-height: 80px; left: 80px; }
+	#searchSearchMode{ height: 80px; font-size: 32px; line-height: 80px;}		
+	#searchModeHashtag{ right: 40px; height: 80px; }
+	#searchModeHashtagList{ width:80px; height: 80px; }
+	#searchModeHashtagMosaic{ width: 80px; height: 80px; }
+	#searchModeUsername{ left: 40px; height: 80px; }
+	#searchModeVideo{ margin-left:-40px; width:80px; height:80px;}		
+	
+	#searchVideoItemByList,#profileVideoItemByList{ margin:7px; height:130px; }
+	#searchVideoItemByListThumb,#profileVideoItemByListThumb{ width:180px; height:130px; }
+	#searchVideoItemByListBody,#profileVideoItemByListBody{ right: 65px; left: 180px; font-size: 24px; line-height:28px; margin-left: 10px; margin-top: 7px; margin-right: 5px; }
+	#searchVideoItemByListContent,#profileVideoItemByListContent{ height: 30px; }
+	#searchVideoItemByListScore,#profileVideoItemByListScore{ width: 130px; height: 130px; line-height: 130px; margin-left: 25px;}
+	#searchVideoItemSmall, #profileVideoItemSmall{ width:65px; }	
+	
+	#searchUserList{ top: 230px;}
+	#searchUserItem, #userItem{ height:130px; }
+	#searchUserItemPhoto, #userItemPhoto{ width:130px; height:130px;}
+	#searchUserItemBody, #userItemBody{ right: 0px; left: 130px; font-size: 24px; line-height:32px; margin-left: 20px; margin-top: 7px;}
+	#searchUserItemCredGraph, #userItemCredGraph{ width: 130px; height: 130px; line-height: 130px; }
+	#searchUserItemFriendship{ width: 130px; height: 130px; }			
+	
+	.greyScore0{ background:url("/img/pieGrey0_130.png") no-repeat; }
+	.greyScore1{ background:url("/img/pieGrey1_130.png") no-repeat; }
+	.greyScore2{ background:url("/img/pieGrey2_130.png") no-repeat; }
+	.greyScore3{ background:url("/img/pieGrey3_130.png") no-repeat; }
+	.greyScore4{ background:url("/img/pieGrey4_130.png") no-repeat; }
+	.greyScore5{ background:url("/img/pieGrey5_130.png") no-repeat; }
+	
+	.whiteScore0{ background:url("/img/pieWhite0_130.png") no-repeat; }
+	.whiteScore1{ background:url("/img/pieWhite1_130.png") no-repeat; }
+	.whiteScore2{ background:url("/img/pieWhite2_130.png") no-repeat; }
+	.whiteScore3{ background:url("/img/pieWhite3_130.png") no-repeat; }
+	.whiteScore4{ background:url("/img/pieWhite4_130.png") no-repeat; }
+	.whiteScore5{ background:url("/img/pieWhite5_130.png") no-repeat; }
+	
+	.btnOk{ margin-top: 70px; }
+	.addVideo #mainBody, .login #mainBody, .start #mainBody, .signup #mainBody{ margin-top: 140px; }
+	.textCommon{ height: 60px; font-size: 35px; margin-top: 50px; }
+	.textCommon1{ font-size: 28px; padding:12px; }
+	.textCommon2{ margin-top:50px; height: 80px;line-height: 80px; font-size: 35px;}
+	
+	#emailNotifications{ margin-top: 160px;}
+	#imgEmailNotifications{ margin-top: -10px; }
+		
+	#btnAddVideo{ width:120px; height: 150px; margin-left: -60px; background: url("/img/btnAddVideo640.png");}
+	
+	#videoPlayerIframe{ width: 600px; height: 400px; margin-left:-300px; margin-top: -200px; }
+	#videoScoreMain, #videoInfoArea1{ margin-top: 100px; font-size: 28px;}
+	#notificationList{ top: 80px; font-size: 18px; line-height: 20px;}
+	#notificationList a{ font-size: 19px; line-height:22px; }
+	#notificationItem{ height: 170px; margin-top: 20px; margin-bottom: 20px;}
+	#notificationGap{ left: 20px; top: 20px; right: 20px; bottom: 20px;}
+	#notificationItemPhoto{ width: 130px; height: 130px; }
+	#notificationItemContent{ left: 130px; margin: 20px 10px 0px 15px; }
+	#notificationItemDescription{ height:66px; margin-top: 4px; line-height: 22px;}
+	#notificationItemTimeAgo{ right: 10px; top:-15px; }
+	
+	#profileSaveSettings i{ right:20px; margin-top:5px; }
+	#btnFBShare{ margin-top:150px; }
+	#btnTWShare{ margin-top:100px; }
+	#reportCopyPostUrl, #emailShare{ margin-top: 100px;}
+	.btnForgotPassword{ font-size: 24px; margin-top: 10px; left:20px; height: 80px; top: 50px; line-height: 80px;}
+	.followingList #mainBody, .followerList #mainBody{ top: 80px; }
+	.findFriends #mainBody{ top: 140px; }
+	.uploadPicture #mainBody{ top: 105px; }
+	.findFriends #socialTab{ top : 80px; height: 60px; }
+	.findFriends #socialItem{ font-size: 28px; line-height: 60px; }
+	.socialUnconnected{ font-size:28px; }
+	
+	#loadingContainer{ margin-left: -70px; }
+	#imgLoading{ width: 140px; }
+	.popupBtnPrev, .popupBtnPlay, .popupBtnReport, .popupBtnShare{ width:80px; height:80px; }
+	.noData{ font-size: 32px; }
+	#btnCommentShare{ height: 28px; }
+	.labelInfo{ font-size:24px; }
+	.videoProfile{ width: 130px; height: 130px; }
+	#hashtagSymbol{ top : 40px; font-size:52px; }
+	.btnClearText{ top: 9px;right: 8%;width: 42px;height: 42px; }
+	.btnClearTextarea{ top: 20px;right: 112px; width: 42px;height: 42px;}
+	
+	#shareSocial{ margin-top: 30px; width: 80px; height: 80px;padding-left:80px; background-size: 80px !important;}
+	#labelShareAlso{ margin-top:70px; font-size:24px; }
+	.buttonUp{ margin-top: -80px !important; }
+	.socialImage{ width: 80px; height: 80px; }
+	
+	.menuList{ top: 80px;}
+    .menuItem{ height: 80px; line-height: 80px; font-size: 32px; }
+    .menuItemImg{ width: 80px; height: 80px; }
+    .menuListBackground, .periodListBackground{ top: 80px; }
+}
+
+	img[usemap] {
+		border: none;
+		width: auto;
+		height: auto;
+		max-width: 100%;
+		
+	}
+img{ -moz-user-select: none; -webkit-user-select: none; user-select: none; }
