@@ -4,7 +4,8 @@ The 1 ton social video sharing app.
 
 Instances
 ----------
-- Live Site : http://meri.to, http://globorojo.tv
+- Web App Live Site : http://meri.to, http://globorojo.tv
+- Apple App Store : Globo Rojo
 
 Prerequisites
 -------------
@@ -38,3 +39,4 @@ Installation
 1. Install globorojo_db.sql
 2. Set Web Service API URL
 3. Open /common/config.php and set connection info for db & facebook, twitter API key values
+4. Open Globo Rojo.xcodeproj and run
