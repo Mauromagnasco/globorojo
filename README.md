@@ -1,3 +1,19 @@
+GLOBO ROJO
+----------
+The 1 ton social video sharing app.
+
+Instances
+----------
+- Live Site : http://meri.to, http://globorojo.tv
+
+Prerequisites
+-------------
+- Apache
+- PHP >= 5.4.0
+- MySQL >= 5.6.0
+- Note: You can use any existing LAMP stack like https://www.apachefriends.org/index.html or http://www.easyphp.org/ or vagrant if you are advanced user.
+
+
 Description
 -----------
 
