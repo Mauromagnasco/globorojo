@@ -20,4 +20,5 @@ You should have received a copy of the GNU General Public License along with thi
 Installation
 ------------
 1. Install globorojo_db.sql
-2. open /common/config.php and set connection info for db & facebook, twitter API key values
+2. Set Web Service API URL
+3. Open /common/config.php and set connection info for db & facebook, twitter API key values
