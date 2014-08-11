@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+    <dependencies>
+        <deployment defaultVersion="1536" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchViewController">
+            <connections>
+                <outlet property="descriptionContentView" destination="57X-8a-jhk" id="fvf-VY-RAZ"/>
+                <outlet property="descriptionLabel" destination="OoR-sG-3H1" id="2Gb-6D-Y5i"/>
+                <outlet property="hashDateOrderButton" destination="6xB-Zh-KlW" id="afN-KB-srh"/>
+                <outlet property="hashMeritOrderButton" destination="lmQ-yl-sU5" id="xuy-lt-7OA"/>
+                <outlet property="hashScoreOrderButton" destination="DlG-OJ-Zap" id="Xbg-Tw-EuI"/>
+                <outlet property="hashtagDetailButton" destination="vQd-A6-kUm" id="A65-NZ-sKL"/>
+                <outlet property="hashtagHomeButton" destination="lTK-OP-a6q" id="L4V-3X-Cua"/>
+                <outlet property="hashtagListButton" destination="yAj-Nn-BbU" id="IFP-Jg-oJ9"/>
+                <outlet property="mainContentView" destination="rbd-8x-x4Y" id="wwy-yq-VhS"/>
+                <outlet property="menuButton" destination="WGe-3E-haq" id="bg3-KZ-ywG"/>
+                <outlet property="nameAlphaOrderButton" destination="fjm-4I-Y9P" id="6Mi-5n-nbu"/>
+                <outlet property="nameDateOrderButton" destination="dq8-c4-Adk" id="r19-X5-shA"/>
+                <outlet property="nameMeritOrderButton" destination="tHz-5v-hJ9" id="6jK-z5-Hc0"/>
+                <outlet property="scrollContainerView" destination="bxy-lf-8be" id="WgD-9D-w1z"/>
+                <outlet property="scrollView" destination="ga7-7c-JQv" id="Dhh-gp-vKm"/>
+                <outlet property="searchTextField" destination="CYQ-1U-qCR" id="GNH-dQ-Jh4"/>
+                <outlet property="segmentContainerView" destination="Qjl-Wm-PAx" id="ikA-mU-4XK"/>
+                <outlet property="swipeButton" destination="htp-zy-qD1" id="rIQ-IX-ZHH"/>
+                <outlet property="usernameButton" destination="9yj-3p-BhJ" id="MjI-RZ-uiF"/>
+                <outlet property="view" destination="1" id="3"/>
+                <outlet property="viewLoading" destination="B21-db-NiT" id="imu-Hy-roA"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="1">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" id="rbd-8x-x4Y">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <view autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" id="7MQ-EU-X2a">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="htp-zy-qD1">
+                                    <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <state key="normal" backgroundImage="btnBigWatch.png">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="onBackButton:" destination="-1" eventType="touchUpInside" id="Q30-d6-DCz"/>
+                                    </connections>
+                                </button>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search #tag or @username" minimumFontSize="17" id="CYQ-1U-qCR">
+                                    <rect key="frame" x="48" y="5" width="148" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="eTd-xD-r4a">
+                                    <rect key="frame" x="236" y="-3" width="45" height="45"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <inset key="contentEdgeInsets" minX="13" minY="13" maxX="13" maxY="13"/>
+                                    <state key="normal" image="btnSearch.png">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="onSearchButton:" destination="-1" eventType="touchUpInside" id="DCy-72-OTf"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="WGe-3E-haq">
+                                    <rect key="frame" x="280" y="0.0" width="40" height="40"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <state key="normal" backgroundImage="btnMenu.png">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="onMenuButton:" destination="-1" eventType="touchUpInside" id="ZZc-6T-jjd"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="DMm-ey-puR">
+                                    <rect key="frame" x="195" y="-1" width="42" height="42"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <inset key="contentEdgeInsets" minX="19" minY="11" maxX="3" maxY="11"/>
+                                    <state key="normal" image="btnGrayDeleteText.png">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="onDeleteTextButton:" destination="-1" eventType="touchUpInside" id="At6-Sq-Sfn"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </view>
+                        <view autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" id="j9Q-b3-66q">
+                            <rect key="frame" x="0.0" y="40" width="320" height="40"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="lTK-OP-a6q">
+                                    <rect key="frame" x="0.0" y="0.0" width="140" height="40"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" red="0.84313725490000002" green="0.84313725490000002" blue="0.84313725490000002" alpha="1" colorSpace="deviceRGB"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <state key="normal" title="#Hashtag">
+                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="onHashtagHomeButton:" destination="-1" eventType="touchUpInside" id="HVY-da-tAe"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="yAj-Nn-BbU">
+                                    <rect key="frame" x="140" y="0.0" width="40" height="40"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <state key="normal" backgroundImage="btnListGray.png">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="onHashtagListButton:" destination="-1" eventType="touchUpInside" id="kmX-Aq-fDx"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="vQd-A6-kUm">
+                                    <rect key="frame" x="140" y="0.0" width="40" height="40"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <state key="normal" backgroundImage="btnExpendedGray.png">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="onHashtagDetailButton:" destination="-1" eventType="touchUpInside" id="3bX-Ug-ELU"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="9yj-3p-BhJ">
+                                    <rect key="frame" x="180" y="0.0" width="140" height="40"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <state key="normal" title="@Username">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="onUsernameButton:" destination="-1" eventType="touchUpInside" id="8Em-Ek-ppC"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        </view>
+                        <view clipsSubviews="YES" contentMode="scaleToFill" id="Qjl-Wm-PAx">
+                            <rect key="frame" x="0.0" y="80" width="320" height="35"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="6xB-Zh-KlW">
+                                    <rect key="frame" x="71" y="3" width="35" height="35"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <inset key="contentEdgeInsets" minX="7" minY="7" maxX="7" maxY="7"/>
+                                    <state key="normal" backgroundImage="orderDownArrow.png">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="hashDateOrderButton:" destination="-1" eventType="touchUpInside" id="3xY-4u-ic1"/>
+                                        <action selector="onHashDateOrderButton:" destination="-1" eventType="touchUpInside" id="WvI-Z8-8vK"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="DlG-OJ-Zap">
+                                    <rect key="frame" x="177" y="3" width="35" height="35"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <inset key="contentEdgeInsets" minX="7" minY="7" maxX="7" maxY="7"/>
+                                    <state key="normal" backgroundImage="orderDownArrow.png">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="onHashScoreOrderButton:" destination="-1" eventType="touchUpInside" id="zvc-d7-UQg"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="lmQ-yl-sU5">
+                                    <rect key="frame" x="285" y="3" width="35" height="35"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <inset key="contentEdgeInsets" minX="7" minY="7" maxX="7" maxY="7"/>
+                                    <state key="normal" backgroundImage="orderDownArrow.png">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="onHashMeritOrderButton:" destination="-1" eventType="touchUpInside" id="vo1-0j-0f6"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="dq8-c4-Adk">
+                                    <rect key="frame" x="71" y="3" width="35" height="35"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <inset key="contentEdgeInsets" minX="7" minY="7" maxX="7" maxY="7"/>
+                                    <state key="normal" backgroundImage="orderDownArrow.png">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="onNameDateOrderButton:" destination="-1" eventType="touchUpInside" id="Ufs-fZ-edE"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="fjm-4I-Y9P">
+                                    <rect key="frame" x="177" y="3" width="35" height="35"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <inset key="contentEdgeInsets" minX="7" minY="7" maxX="7" maxY="7"/>
+                                    <state key="normal" backgroundImage="orderUpArrow.png">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="onNameAlphaOrderButton:" destination="-1" eventType="touchUpInside" id="PQY-cV-R0f"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="tHz-5v-hJ9">
+                                    <rect key="frame" x="285" y="3" width="35" height="35"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <inset key="contentEdgeInsets" minX="7" minY="7" maxX="7" maxY="7"/>
+                                    <state key="normal" backgroundImage="orderDownArrow.png">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="onNameMeritOrderButton:" destination="-1" eventType="touchUpInside" id="Q7c-TL-GWK"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
+                        </view>
+                        <view clipsSubviews="YES" contentMode="scaleToFill" id="bxy-lf-8be">
+                            <rect key="frame" x="0.0" y="115" width="320" height="453"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <scrollView autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" id="ga7-7c-JQv">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="453"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                </scrollView>
+                            </subviews>
+                        </view>
+                        <view contentMode="scaleToFill" id="57X-8a-jhk">
+                            <rect key="frame" x="0.0" y="115" width="320" height="453"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This Username doesn't have results." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OoR-sG-3H1">
+                                    <rect key="frame" x="11" y="25" width="298" height="57"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="PK0-Rn-hIF">
+                            <rect key="frame" x="128" y="490" width="64" height="78"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" backgroundImage="btnAddVideo640.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="onAddVideoButton:" destination="-1" eventType="touchUpInside" id="PEV-Ls-vp9"/>
+                            </connections>
+                        </button>
+                        <view userInteractionEnabled="NO" contentMode="scaleToFill" id="B21-db-NiT">
+                            <rect key="frame" x="0.0" y="115" width="320" height="453"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <view userInteractionEnabled="NO" alpha="0.15000000596046448" contentMode="scaleToFill" id="cYI-4g-ynN">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="453"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </view>
+                            </subviews>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="btnAddVideo640.png" width="120" height="150"/>
+        <image name="btnBigWatch.png" width="114" height="114"/>
+        <image name="btnExpendedGray.png" width="120" height="120"/>
+        <image name="btnGrayDeleteText.png" width="42" height="42"/>
+        <image name="btnListGray.png" width="80" height="80"/>
+        <image name="btnMenu.png" width="80" height="80"/>
+        <image name="btnSearch.png" width="628" height="612"/>
+        <image name="orderDownArrow.png" width="200" height="200"/>
+        <image name="orderUpArrow.png" width="200" height="200"/>
+    </resources>
+</document>
